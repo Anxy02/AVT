@@ -13,7 +13,7 @@ import random
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 # openai.api_key = "sk-JTF01Ewr75Ca0EcFe989T3BLbKFJ27A04363f70f4c6E8223"  
 # openai.api_key = "sk-dNCQHt5nNY5kQ8DIwg7ySNHqx3lTzgeG1tuVbNXx90pJ1oRi"
-openai.api_key = "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"  #tb
+# openai.api_key = "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"  #tb
 
 def getanswer(R, Q):
     response = openai.completions.create(
