@@ -13,7 +13,7 @@ import random
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 # openai.api_key = "sk-JTF01Ewr75Ca0EcFe989T3BLbKFJ27A04363f70f4c6E8223"  
 # openai.api_key = "sk-dNCQHt5nNY5kQ8DIwg7ySNHqx3lTzgeG1tuVbNXx90pJ1oRi"
-# openai.api_key = "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"  #tb
+openai.api_key = "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"  #tb
 
 def getanswer(R, Q):
     response = openai.completions.create(
@@ -28,7 +28,7 @@ def getanswer(R, Q):
         stop=["\n"]
     )
     time.sleep(5)
-    print(response)
+    print(response.choices[0].text.strip())
     # return response["choices"][0]["text"]
     return response.choices[0].text.strip()
 
@@ -53,7 +53,7 @@ def get_accident_place(R):
     if "no" in a1.lower():
         return "no"
     a2 = getanswer(R,"Did the accident take place at an 4-way intersection?")
-    if "no" in a1.lower():
+    if "no" in a2.lower():
         return "3way"
     return "4way"
 
@@ -92,11 +92,11 @@ def get_vehicle_type(R):
         "suv":["vehicle.nissan.patrol", "vehicle.audi.etron"],
         "jeep":["vehicle.jeep.wrangler_rubicon"],
         "compact car":["vehicle.audi.a2", "vehicle.nissan.micra", "vehicle.bmw.isetta", "vehicle.citroen.c3", "vehicle.seat.leon"],
-        "sedan":["vehicle.chevrolet.impala", "vehicle.bmw.grandtourer", "vehicle.mini.cooperst", "vehicle.toyota.prius", "vehicle.tesla.model3", "vehicle.lincoln.mkz2017", "vehicle.lincoln2020.mkz2020", "vehicle.charger2020.charger2020"],
+        "sedan":["vehicle.chevrolet.impala", "vehicle.bmw.grandtourer", "vehicle.mini.cooper_s", "vehicle.toyota.prius", "vehicle.tesla.model3", "vehicle.lincoln.mkz_2017", "vehicle.lincoln.mkz_2020", "vehicle.dodge.charger_2020"],
         "coupe":["vehicle.mercedesccc.mercedesccc", "vehicle.audi.tt", "vehicle.mercedes-benz.coupe", "vehicle.mustang.mustang"],
         "motorcycle":["vehicle.harley-davidson.low_rider", "vehicle.yamaha.yzf", "vehicle.kawasaki.ninja"],
         "small bus":["vehicle.volkswagen.t2"],
-        "police car":["vehicle.chargercop2020.chargercop2020", "vehicle.dodge_charger.police"],
+        "police car":["vehicle.dodge.charger_2020", "vehicle.dodge.charger_police"],
         "bike":["vehicle.bh.crossbike", "vehicle.gazelle.omafiets", "vehicle.diamondback.century"]
     }
     vehicletypelist = list(vehicletype.keys())
@@ -202,7 +202,7 @@ if __name__ == "__main__":
             else:
                 text = text.replace("V2_DIRE", "left")
                 text = text.replace("V2_DEG", "0")
-                text = text.replace("DISTLR", 0)
+                text = text.replace("DISTLR", str(0))
             
             write_scenic(text,report,"FOLLOW_LANE")
         else:

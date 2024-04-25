@@ -1,0 +1,236 @@
++: town03 04 05
+no map:town06 07
+
+
+# case 2 11
+Completion(id='cmpl-9GleBDPkCnnsChppHKwmPxdh8z1QM', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Vehicle 1 is a pickup truck.')], created=1713783431, model='gpt-3.5-turbo-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=8, prompt_tokens=236, total_tokens=244))
+Completion(id='cmpl-9GleIsejkoBapSt3jpknnuGwogUxX', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Vehicle 2 is a sedan.')], created=1713783438, model='gpt-3.5-turbo-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=7, prompt_tokens=236, total_tokens=243))
+Completion(id='cmpl-9GleRywSkI6gNNJQq1NA49sL2zyyu', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' No, the accident did not take place at an intersection.')], created=1713783447, model='gpt-3.5-turbo-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=12, prompt_tokens=213, total_tokens=225))
+Completion(id='cmpl-9GleXKObttcw3YRPG4ArMabfz6YyT', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Yes, Vehicle 1 and Vehicle 2 were both traveling east in the same direction.')], created=1713783453, model='gpt-3.5-turbo-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=18, prompt_tokens=218, total_tokens=236))
+Completion(id='cmpl-9GlezSliqhTDWUWngIROGLFDSwjbP', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Vehicle 2 is 25 meters in front of Vehicle 1 at the beginning.')], created=1713783481, model='gpt-3.5-turbo-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=17, prompt_tokens=225, total_tokens=242))
+Completion(id='cmpl-9GlfB6OFL7ZYeScx1mikida7aYavm', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Neither. Vehicle 2 was legally parked at the right curb.')], created=1713783493, model='gpt-3.5-turbo-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=13, prompt_tokens=222, total_tokens=235))
+Completion(id='cmpl-9Glfecdag4RDcyNpARAbmMm6sx5QJ', choices=[CompletionChoice(finish_reason='stop', index=0, logprobs=None, text=' Vehicle 2 is 25 meters to the right of Vehicle 1 at the beginning.')], created=1713783522, model='gpt-3.5-turbo-instruct', object='text_completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=18, prompt_tokens=225, total_tokens=243))
+path: test_scenic/Town01/22_FOLLOW_LANE.scenic
+path: test_scenic/Town02/22_FOLLOW_LANE.scenic
+path: test_scenic/Town03/22_FOLLOW_LANE.scenic
+path: test_scenic/Town04/22_FOLLOW_LANE.scenic
+path: test_scenic/Town05/22_FOLLOW_LANE.scenic
+path: test_scenic/Town06/22_FOLLOW_LANE.scenic
+path: test_scenic/Town07/22_FOLLOW_LANE.scenic
+
+# case 1 11
+Vehicle 1 is a Jeep.
+Vehicle 2 is a SUV.
+No
+Yes
+Vehicle 2 is 1.7 meters in front of Vehicle 1 at the beginning.
+Vehicle 2 is neither in the left or right lane of vehicle 1.
+Vehicle 2 is 1.7 meters to the left of Vehicle 1 at the beginning.
+path: test_scenic/Town01/40_FOLLOW_LANE.scenic
+path: test_scenic/Town02/40_FOLLOW_LANE.scenic
+path: test_scenic/Town03/40_FOLLOW_LANE.scenic
+path: test_scenic/Town04/40_FOLLOW_LANE.scenic
+path: test_scenic/Town05/40_FOLLOW_LANE.scenic
+path: test_scenic/Town06/40_FOLLOW_LANE.scenic
+path: test_scenic/Town07/40_FOLLOW_LANE.scenic
+DONE
+
+
+# case 3 12
+Vehicle 1 is a compact car.
+Vehicle 2 is a compact car.
+No, the accident did not take place at an intersection.
+No, Vehicle 1 and Vehicle 2 are not driving in the same direction. Vehicle 1 is southbound on the road while Vehicle 2 is legally parked on the right side of the road.
+Vehicle 2 is 25 meters in front of Vehicle 1 at the beginning.
+path: test_scenic/Town02/23_FOLLOW_LANE.scenic
+
+# case 4 12
+Vehicle 1 is a sedan.
+Vehicle 1 is a sedan.
+No, the accident did not take place at an intersection.
+No, Vehicle 1 and Vehicle 2 are not driving in the same direction. Vehicle 1 is driving from a one-lane roadway inside of a trailer court, while Vehicle 2 is parked in a parking lot.
+It is not possible to accurately determine the distance between vehicle 1 and vehicle 2 at the beginning of the crash without more information. The description of the crash does not mention a second vehicle (vehicle 2) and does not provide any information about its position or involvement in the crash.
+path: test_scenic/Town02/24_FOLLOW_LANE.scenic
+
+# case 5 11
+Vehicle 1 is a Jeep.
+Vehicle 2 is a SUV.
+No, the accident did not take place at an intersection.
+Yes, Vehicle 1 and Vehicle 2 are driving in the same direction.
+Vehicle 2 is 1.7 meters in front of Vehicle 1 at the beginning.
+Neither
+path: test_scenic/Town01/25_FOLLOW_LANE.scenic
+path: test_scenic/Town02/25_FOLLOW_LANE.scenic
+path: test_scenic/Town03/25_FOLLOW_LANE.scenic
+path: test_scenic/Town04/25_FOLLOW_LANE.scenic
+path: test_scenic/Town05/25_FOLLOW_LANE.scenic
+path: test_scenic/Town06/25_FOLLOW_LANE.scenic
+path: test_scenic/Town07/25_FOLLOW_LANE.scenic
+
+# case 6  T  !!!vehicle.mini.cooper_s
+Vehicle #1 is a sedan.
+Vehicle 2 is a sedan.
+Yes
+No, the accident took place at a "T" intersection with no controls for the direction in which Vehicle #1 was traveling.
+Vehicle 1 is turning right.
+Vehicle 2 is parked and not in motion.
+path: test_scenic/Town01/26_RIGHT.scenic
+path: test_scenic/Town02/26_RIGHT.scenic
+path: test_scenic/Town03/26_RIGHT.scenic
+path: test_scenic/Town04/26_RIGHT.scenic
+path: test_scenic/Town05/26_RIGHT.scenic
+path: test_scenic/Town06/26_RIGHT.scenic
+path: test_scenic/Town07/26_RIGHT.scenic
+
+# case 7 T
+Vehicle #1 is a sedan.
+Vehicle 2 is a sedan.
+Yes, the accident took place at an intersection.
+No, the accident did not take place at a 4-way intersection.
+Vehicle 1 is going straight.
+Vehicle 2 is turning left.
+path: test_scenic/Town01/27_STRAIGHT.scenic
+path: test_scenic/Town02/27_STRAIGHT.scenic  # !!!
+path: test_scenic/Town03/27_STRAIGHT.scenic
+path: test_scenic/Town04/27_STRAIGHT.scenic
+path: test_scenic/Town05/27_STRAIGHT.scenic
+path: test_scenic/Town06/27_STRAIGHT.scenic
+path: test_scenic/Town07/27_STRAIGHT.scenic
+
+# case 8 +
+Vehicle 1 is a compact car.
+Vehicle 2 is a Jeep Wrangler.
+Yes
+Yes
+Vehicle 1 is turning left.
+Vehicle 2 is going straight.
+path: test_scenic/Town01/28_LEFT.scenic
+path: test_scenic/Town02/28_LEFT.scenic
+path: test_scenic/Town03/28_LEFT.scenic
+path: test_scenic/Town04/28_LEFT.scenic
+path: test_scenic/Town05/28_LEFT.scenic
+path: test_scenic/Town06/28_LEFT.scenic
+path: test_scenic/Town07/28_LEFT.scenic
+
+# case 9 12
+Vehicle 1 is a SUV (2000 Ford Expedition).
+Vehicle 2 is a pickup truck.
+No, the accident did not take place at an intersection.
+No, Vehicle 1 and Vehicle 2 are driving in opposite directions. Vehicle 1 is traveling south and Vehicle 2 is traveling north.
+Vehicle #2 is 0 meters in front of Vehicle #1 at the beginning.
+path: test_scenic/Town02/29_FOLLOW_LANE.scenic
+
+# case 10 T  fail
+Vehicle 1 is a pickup truck.
+Vehicle 2 is a sedan.
+Yes, the accident took place at a T-intersection controlled by a traffic control signal.
+No, the accident took place at a T-intersection controlled by a traffic control signal.
+Vehicle 1 is going straight.
+Vehicle 2 is going straight.
+path: test_scenic/Town01/30_STRAIGHT.scenic
+path: test_scenic/Town02/30_STRAIGHT.scenic
+path: test_scenic/Town03/30_STRAIGHT.scenic
+path: test_scenic/Town04/30_STRAIGHT.scenic
+path: test_scenic/Town05/30_STRAIGHT.scenic
+path: test_scenic/Town06/30_STRAIGHT.scenic
+path: test_scenic/Town07/30_STRAIGHT.scenic
+
+671: UserWarning: ignoring shoulder in the middle of road 2343
+  warnings.warn(f'ignoring {name} in the middle of road {self.id_}')
+Traceback (most recent call last; use -b to show Scenic internals):
+scenic.core.distributions.RejectionException: failed to generate scenario in 2000 iterations
+
+# case 12 T !!!vehicle.mini.cooper_s 
+Vehicle 1 is a sedan.
+Vehicle 2 is a sedan.
+Yes, the accident took place at a T-intersection.
+No, the accident took place at a T-intersection.
+Turning left
+Vehicle 2 is going straight.
+path: test_scenic/Town01/32_LEFT.scenic
+path: test_scenic/Town02/32_LEFT.scenic  !!
+path: test_scenic/Town03/32_LEFT.scenic
+path: test_scenic/Town04/32_LEFT.scenic
+path: test_scenic/Town05/32_LEFT.scenic
+path: test_scenic/Town06/32_LEFT.scenic
+path: test_scenic/Town07/32_LEFT.scenic
+
+# case 14 12 safe
+Vehicle 1 is a sedan.
+Vehicle 2 is a sedan.
+No
+No, Vehicle 1 and Vehicle 2 are driving in opposite directions.
+It is not possible to determine the exact distance between the two vehicles at the beginning of the crash without more information. The case does not specify the initial distance between the two vehicles before V2 drifted over the lane line.
+path: test_scenic/Town02/33_FOLLOW_LANE.scenic
+
+# case 15 12 !!
+Vehicle 1 is a SUV.
+Vehicle 2 is a 4-door utility vehicle, specifically a 2002 Buick Rendezvous.
+No, the accident did not take place at an intersection.
+No, Vehicle 1 and Vehicle 2 are driving in opposite directions.
+It is not possible to determine the exact distance between the two vehicles at the beginning of the accident without more information.
+path: test_scenic/Town02/34_FOLLOW_LANE.scenic
+
+# case 16 +  !!!vehicle.mini.cooper_s 
+Vehicle 1 is a compact car.
+Vehicle 2 is a sedan.
+Yes
+Yes
+Turning left
+Vehicle 2 is going straight.
+path: test_scenic/Town01/35_LEFT.scenic
+path: test_scenic/Town02/35_LEFT.scenic
+path: test_scenic/Town03/35_LEFT.scenic
+path: test_scenic/Town04/35_LEFT.scenic !!big
+path: test_scenic/Town05/35_LEFT.scenic !!
+path: test_scenic/Town06/35_LEFT.scenic
+path: test_scenic/Town07/35_LEFT.scenic
+
+# case 17 + !!
+Vehicle 1 is a sedan.
+Vehicle 2 is a sedan.
+Yes
+Yes
+Vehicle 1 is turning left.
+Vehicle 2 is turning left.
+path: test_scenic/Town01/36_LEFT.scenic
+path: test_scenic/Town02/36_LEFT.scenic
+path: test_scenic/Town03/36_LEFT.scenic
+path: test_scenic/Town04/36_LEFT.scenic
+path: test_scenic/Town05/36_LEFT.scenic
+path: test_scenic/Town06/36_LEFT.scenic
+path: test_scenic/Town07/36_LEFT.scenic
+
+# case 18 + !!!vehicle.dodge.charger_2020
+Vehicle 1 is a compact utility vehicle.
+Vehicle 2 is a compact utility vehicle.
+Yes
+Yes
+Vehicle 1 is turning left.
+Vehicle 2 is turning left.
+path: test_scenic/Town01/37_LEFT.scenic
+path: test_scenic/Town02/37_LEFT.scenic
+path: test_scenic/Town03/37_LEFT.scenic
+path: test_scenic/Town04/37_LEFT.scenic
+path: test_scenic/Town05/37_LEFT.scenic !!
+path: test_scenic/Town06/37_LEFT.scenic
+path: test_scenic/Town07/37_LEFT.scenic
+
+# case 19 12 !!
+SUV
+Vehicle 2 is a SUV.
+No, the accident did not take place at an intersection.
+No, Vehicle 1 and Vehicle 2 are driving in opposite directions.
+It is not possible to determine the exact distance between the two vehicles at the beginning of the crash without more information. The distance between the two vehicles would depend on their speeds and positions before the crash occurred.
+path: test_scenic/Town02/38_FOLLOW_LANE.scenic
+
+# case 20 12
+Vehicle 1 is a compact car.
+compact car
+No, the accident did not take place at an intersection.
+No, Vehicle 1 and Vehicle 2 are not driving in the same direction. Vehicle 1 is traveling southbound and Vehicle 2 is traveling northbound.
+It is not possible to determine the distance between vehicle 1 and vehicle 2 at the beginning of the incident based on the information provided. The case does not mention the presence of a second vehicle (vehicle 2) at the scene or its location in relation to vehicle 1.
+path: test_scenic/Town02/39_FOLLOW_LANE.scenic
+
+
+
